@@ -131,3 +131,16 @@ We'll be using a modern web application stack:
    - Connecting to backend APIs
    - Python Django business logic
    - MongoDB data layer
+
+### MongoDB Database Setup
+
+To set up the MongoDB database for OctoFit Tracker, execute the following commands:
+
+```javascript
+use octofit_db
+db.createCollection('users')
+db.createCollection('teams')
+db.createCollection('activity')
+db.createCollection('leaderboard')
+db.createCollection('workouts')
+db.users.createIndex({ email: 1 }, { unique: true })
