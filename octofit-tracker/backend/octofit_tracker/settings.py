@@ -73,12 +73,16 @@ WSGI_APPLICATION = 'octofit.wsgi.application'
 # Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
+        'ENGINE': 'djongo',  # MongoDB database engine
+        'NAME': 'octofit_db',  # Database name
         'HOST': 'localhost',
         'PORT': 27017,
     }
 }
+
+# Add a reference to djongo for compatibility checks
+# Note: djongo is required for working with MongoDB in Django
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
