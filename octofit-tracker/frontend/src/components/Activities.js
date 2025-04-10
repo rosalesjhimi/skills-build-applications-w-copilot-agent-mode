@@ -4,7 +4,8 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/activities/')
+    // fetch('http://localhost:8000/api/activities/')
+    fetch('https://congenial-robot-pwrx4jxpp9c6vj4-8000.app.github.dev/api/activities/')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

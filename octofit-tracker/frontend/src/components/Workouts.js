@@ -4,7 +4,8 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/workouts/')
+    // fetch('http://localhost:8000/api/workouts/')
+    fetch('https://congenial-robot-pwrx4jxpp9c6vj4-8000.app.github.dev/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data))
       .catch(error => console.error('Error fetching workouts:', error));

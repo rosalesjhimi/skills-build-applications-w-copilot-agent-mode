@@ -4,7 +4,8 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/teams/')
+    // fetch('http://localhost:8000/api/teams/')
+    fetch('https://congenial-robot-pwrx4jxpp9c6vj4-8000.app.github.dev/api/teams/')
       .then(response => response.json())
       .then(data => setTeams(data))
       .catch(error => console.error('Error fetching teams:', error));
