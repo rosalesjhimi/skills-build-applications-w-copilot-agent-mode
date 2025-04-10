@@ -4,10 +4,25 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/activities/')
-      .then(response => response.json())
-      .then(data => setActivities(data))
-      .catch(error => console.error('Error fetching activities:', error));
+    fetch('http://localhost:8000/api/activities/codespace-suffix/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          setActivities(data);
+        } else {
+          console.error('Unexpected response format:', data);
+          setActivities([]);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching activities:', error);
+        setActivities([]);
+      });
   }, []);
 
   return (
